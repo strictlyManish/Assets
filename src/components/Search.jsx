@@ -43,7 +43,7 @@ function Search() {
       </div>
 
       {errors.query && (
-        <p className="mt-1 ml-4 text-xs text-red-500">
+        <p className="mt-1 ml-4 text-xs text-pink-400">
           {errors.query.message}
         </p>
       )}

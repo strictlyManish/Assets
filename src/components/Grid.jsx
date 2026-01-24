@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { fetchGif, fetchPhotos, fetchVideo } from "../api/media.api";
+import { fetchGif, fetchPhotos } from "../api/media.api";
 import {
   setQuery,
   setloading,
@@ -7,6 +7,8 @@ import {
   setResults,
 } from "../app/features/search";
 import { useEffect } from "react";
+import { data } from "react-router-dom";
+import Card from "./Card";
 
 function Grid() {
   const dispatch = useDispatch();
@@ -16,32 +18,35 @@ function Grid() {
   );
 
   useEffect(() => {
-    const fetData = async () => {
-      if (query !== "") {
-        let data;
-        if (activeTab == "photos") {
-          let res = await fetchPhotos(query);
-          data = res.results;
-        }
+    const fetchData = async () => {
+      let data = [];
 
-        if (activeTab == "gif") {
-          let res = await fetchGif(query);
-          console.log(res);
-        }
+      if (query === "") return;
 
-        if (activeTab == "videos") {
-          let res = fetchVideo(query);
-          data = res.videos;
-        }
-
-        console.log(data);
+      if (activeTab === "photos") {
+        const res = await fetchPhotos(query);
+        data = res;
+      } else if (activeTab === "gif") {
+        const res = await fetchGif(query);
+        data = res;
       }
+      dispatch(setResults(data));
     };
 
-    fetData();
+    fetchData();
   }, [query, activeTab]);
 
-  return <div>Grid</div>;
+  return (
+    <div className="flex flex-wrap gap-2 justify-center mt-5 px-5">
+      {results.map((obj, idx) => {
+        return (
+          <div key={idx}>
+            <Card obj={obj} />
+          </div>
+        );
+      })}
+    </div>
+  );
 }
 
 export default Grid;

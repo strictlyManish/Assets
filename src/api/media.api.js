@@ -12,6 +12,7 @@ export async function fetchPhotos(query, page = 1, per_page = 20) {
 
   return res.data.results.map((obj)=>({
     id: obj.id,
+    type:'photo',
     full: obj.urls.full,
     thumb: obj.urls.thumb,
     description: obj.description || obj.alt_description || "",

@@ -9,7 +9,7 @@ function App() {
   const dispatch = useDispatch();
 
   const fetchadta = async()=>{
-    let res = await fetchVideo('apple');
+    let res = await fetchPhotos('apple');
     console.log(res)
   }
 
@@ -18,16 +18,6 @@ function App() {
       <Search/>
       <Tab/>
       <Grid/>
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-
-    <h2>Fetch Details</h2>
-
-      <button onClick={()=>dispatch(fetchadta())}>get data </button>
-
     </div>
   )
 }
