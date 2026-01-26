@@ -36,7 +36,7 @@ function Search() {
 
         <button
           type="submit"
-          className="bg-indigo-500 w-32 h-9 rounded-full text-sm text-white mr-1.25"
+          className="bg-pink-600 w-32 h-9 rounded-full text-sm text-white mr-1.25"
         >
           Search
         </button>
