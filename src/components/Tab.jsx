@@ -9,7 +9,7 @@ function Tab() {
   const activeVal = useSelector((state) => state.search.activeTab);
 
   return (
-    <div className="flex space-x-2  w-fit  p-1 backdrop-blur-lg text-sm mt-5 px-5">
+    <div className="flex space-x-2  w-fit  p-1 bg-gray-700 rounded-full text-sm mt-5  fixed top-3 left-5 z-1">
       {tab.map((el, idx) => {
         return (
           <button

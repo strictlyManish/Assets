@@ -46,7 +46,7 @@ function Card({ obj }) {
           onClick={() => {
             addToCollection(obj);
           }}
-          className="bg-indigo-600 active:scale-95 text-white rounded px-3 py-1 cursor-pointer font-medium"
+          className="text-white rounded-full p-2 w-1/3 bg-gray-800 cursor-pointer h-fit items-end mt-45"
         >
           Save
         </button>

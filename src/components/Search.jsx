@@ -18,7 +18,7 @@ function Search() {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="w-full max-w-md m-auto">
+    <form onSubmit={handleSubmit(onSubmit)} className="w-full max-w-md ">
       <div className="flex items-center border pl-4 gap-2 bg-gray-800 border-gray-500/30 h-[46px] rounded-full overflow-hidden w-full">
         
         <input
