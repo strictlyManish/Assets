@@ -1,53 +1,53 @@
-import React from "react";
-
 function Card({ obj }) {
   return (
-    <div className="w-[18vw] relative h-80 bg-white rounded-xl overflow-hidden">
-      <a target="_blank" className="h-full" href={obj.url}>
-        {obj.type == "photo" ? (
+    <div
+      className="
+      mt-2
+        w-full
+        break-inside-avoid
+        bg-white
+        rounded-xl
+        overflow-hidden
+        shadow-md
+        hover:shadow-lg
+        transition-shadow
+        duration-300
+      "
+    >
+      <a target="_blank" rel="noopener noreferrer" href={obj.url}>
+        {obj.type === "photo" && (
           <img
-            className="h-full w-full object-cover object-center"
+            className="w-full h-auto object-cover"
             src={obj.full}
-            alt=""
+            alt={obj.title}
             loading="lazy"
           />
-        ) : (
-          ""
         )}
-        {obj.type == "video" ? (
+
+        {obj.type === "video" && (
           <video
-            className="h-full w-full object-cover object-center"
+            className="w-full h-auto object-cover"
             autoPlay
             loop
             muted
+            playsInline
             src={obj.src}
-          ></video>
-        ) : (
-          ""
-        )}
-        {obj.type == "gif" ? (
-          <img
-            className="h-full w-full object-cover object-center"
-            src={obj.src}
-            alt=""
           />
-        ) : (
-          ""
+        )}
+
+        {obj.type === "gif" && (
+          <img
+            className="w-full h-auto object-cover" src={obj.src} alt="" />
         )}
       </a>
-      <div
-        id="bottom"
-        className="flex justify-between gap-3 objs-center w-full px-4 py-6 absolute bottom-0 text-white"
-      >
-        <h2 className="text-lg font-semibold capitalize h-14 overflow-hidden">
+
+      {/* Overlay */}
+      <div className="p-3 flex justify-between items-start gap-3">
+        <h2 className="text-sm font-semibold capitalize line-clamp-2">
           {obj.title}
         </h2>
-        <button
-          onClick={() => {
-            addToCollection(obj);
-          }}
-          className="text-white rounded-full p-2 w-1/3 bg-gray-800 cursor-pointer h-fit items-end mt-45"
-        >
+
+        <button className="text-xs bg-gray-800 text-white px-3 py-1 rounded-full">
           Save
         </button>
       </div>
@@ -55,4 +55,5 @@ function Card({ obj }) {
   );
 }
 
-export default Card;
+
+export default Card

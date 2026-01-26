@@ -13,7 +13,7 @@ function App() {
   };
 
   return (
-    <div className="bg-gray-100 text-white min-h-screen w-full overflow-x-hidden">
+    <div className="bg-gray-300 text-white min-h-screen w-full overflow-x-hidden">
       <div
         className="fixed top-0 left-0 w-full h-16 sm:h-18 md:h-20 bg-transparent backdrop-blur-xl flex items-center justify-center z-1 px-4"
       >

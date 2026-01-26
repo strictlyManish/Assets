@@ -37,7 +37,14 @@ function Grid() {
   }, [query, activeTab]);
 
   return (
-    <div className="flex flex-wrap gap-2 justify-center  px-5">
+    <div className="px-3 sm:px-4 md:px-6
+        pt-4
+        columns-1
+        sm:columns-2
+        md:columns-3
+        lg:columns-4
+        xl:columns-5
+        gap-4">
       {results.map((obj, idx) => {
         return (
           <div key={idx}>

@@ -10,10 +10,10 @@ function Tab() {
     <div
       className="
         fixed z-50
-        bottom-3 md:bottom-auto
-        top-auto md:top-20
+        bottom-3 
+        top-auto md:bottom-5
         left-1/2 -translate-x-1/2
-        bg-gray-700 rounded-full
+        bg-transparent backdrop-blur-xs rounded-full
         flex gap-1
         p-1
         w-[92%] sm:w-[80%] md:w-fit
