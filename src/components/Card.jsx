@@ -1,7 +1,9 @@
+import { Download } from 'lucide-react';
 function Card({ obj }) {
   return (
     <div
       className="
+      
       mt-2
         w-full
         break-inside-avoid
@@ -11,7 +13,7 @@ function Card({ obj }) {
         shadow-md
         hover:shadow-lg
         transition-shadow
-        duration-300
+        duration-300 relative
       "
     >
       <a target="_blank" rel="noopener noreferrer" href={obj.url}>
@@ -40,18 +42,12 @@ function Card({ obj }) {
             className="w-full h-auto object-cover" src={obj.src} alt="" />
         )}
       </a>
-
-      {/* Overlay */}
-      <div className="p-3 flex justify-between items-start gap-3">
-        <h2 className="text-sm font-semibold capitalize line-clamp-2">
-          {obj.title}
-        </h2>
-
-        <button className="text-xs bg-gray-800 text-white px-3 py-1 rounded-full">
-          Save
+ 
+        <button className="text-xs bg-pink-600 text-white block px-3 py-1 rounded-full absolute bottom-5 right-5">
+          Save <span><Download/></span>
         </button>
       </div>
-    </div>
+    
   );
 }
 
