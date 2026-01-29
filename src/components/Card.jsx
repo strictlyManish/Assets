@@ -43,8 +43,8 @@ function Card({ obj }) {
         )}
       </a>
  
-        <button className="text-xs bg-pink-600 text-white block px-3 py-1 rounded-full absolute bottom-5 right-5">
-          Save <span><Download/></span>
+        <button className="text-xs bg-transparent backdrop-blur-2xl text-white block px-3 py-1 rounded-full absolute bottom-5 right-5">
+           <span><Download/></span>
         </button>
       </div>
     
